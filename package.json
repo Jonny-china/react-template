@@ -1,0 +1,118 @@
+{
+  "name": "voucher",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build -GENERATE_SOURCEMAP=false",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.2.6",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "babel-plugin-import": "^1.11.0",
+    "css-loader": "^2.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "react-app-rewire-aliases": "^0.2.0",
+    "react-app-rewire-import": "^1.0.1",
+    "react-app-rewired": "^1.6.2",
+    "style-loader": "^0.23.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "no-extra-semi": 2,
+      "eqeqeq": 2,
+      "indent": [
+        "error",
+        2
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "react/jsx-child-element-spacing": 2,
+      "react/jsx-closing-bracket-location": [
+        2,
+        "after-props"
+      ],
+      "react/jsx-closing-tag-location": 2,
+      "react/jsx-first-prop-new-line": [
+        2,
+        "never"
+      ],
+      "react/jsx-indent": [
+        2,
+        2
+      ],
+      "react/jsx-key": 2,
+      "react/jsx-max-props-per-line": [
+        2,
+        {
+          "maximum": 1
+        }
+      ],
+      "react/jsx-no-duplicate-props": 2,
+      "react/jsx-props-no-multi-spaces": 2,
+      "react/jsx-sort-props": [
+        2,
+        {
+          "ignoreCase": true
+        }
+      ],
+      "react/jsx-space-before-closing": [
+        2,
+        "always"
+      ],
+      "react/jsx-tag-spacing": [
+        2,
+        {
+          "beforeSelfClosing": true,
+          "beforeClosing": true
+        }
+      ],
+      "react/jsx-wrap-multilines": [
+        2,
+        {
+          "declaration": "parens-new-line",
+          "assignment": "parens-new-line",
+          "return": "parens-new-line",
+          "arrow": "parens-new-line",
+          "condition": "parens-new-line",
+          "logical": "parens-new-line",
+          "prop": "parens-new-line"
+        }
+      ],
+      "react/self-closing-comp": [
+        2,
+        {
+          "component": true,
+          "html": true
+        }
+      ],
+      "react/no-unknown-property": 2
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "theme": {
+    "brand-primary": "#ff0000"
+  }
+}

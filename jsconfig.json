@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "api/*": [
+        "./src/api/*"
+      ],
+      "underscore": [
+        "lodash"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
