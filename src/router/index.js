@@ -1,4 +1,7 @@
-const _import = file => require(`@/views/${file}`).default
+// const _import = file => require(`@/views/${file}`).default
+
+const _import = require(`./_import.${process.env.NODE_ENV}`).default
+console.log(process.env.NODE_ENV)
 
 const routes = [
   {

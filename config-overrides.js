@@ -98,9 +98,46 @@ module.exports = function override(config, env) {
     ]
   })
 
+  config.module.rules[2].oneOf.unshift({
+    test: /\.scss$/,
+    use: [
+      { loader: require.resolve('style-loader') },
+      { loader: require.resolve('css-loader') },
+      {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          // Necessary for external CSS imports to work
+          // https://github.com/facebookincubator/create-react-app/issues/2677
+          ident: 'postcss',
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+              browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9' // React doesn't support IE8 anyway
+              ],
+              flexbox: 'no-2009'
+            })
+          ]
+        }
+      },
+      require.resolve('sass-loader'),
+      {
+        loader: require.resolve('sass-resources-loader'),
+        options: {
+          resources: './src/assets/style/index.scss'
+        }
+      }
+    ]
+  })
+
   // file-loader exclude
   let l = getLoader(config.module.rules, fileLoaderMatcher)
   l.exclude.push(/\.less$/)
+
+  require('react-app-rewire-postcss')(config, true /* any truthy value will do */)
 
   return config
 }

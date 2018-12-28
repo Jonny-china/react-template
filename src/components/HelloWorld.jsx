@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react'
+import React, { PureComponent } from 'react'
 
 class HelloWorld extends PureComponent {
   constructor(props) {
@@ -10,7 +10,9 @@ class HelloWorld extends PureComponent {
 
   render() {
     return (
-      <h1>{this.state.text} {this.props.name}</h1>
+      <h1>
+        {this.state.text} {this.props.name}
+      </h1>
     )
   }
 }

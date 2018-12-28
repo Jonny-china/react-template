@@ -1,36 +1,26 @@
-import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-  // Redirect
-} from 'react-router-dom'
+import React, { Suspense, PureComponent } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import routes from './router'
+import renderRoutes from '@/utils/renderRoutes'
+import Loading from './components/Loading'
 
-class App extends Component {
+const mapStateToProps = state => ({
+  showLoading: state.showLoading
+})
+
+class App extends PureComponent {
   render() {
     return (
       <>
+        {this.props.showLoading && <Loading />}
         <Router>
-          <Switch>
-            {routes.map((route, index) => (
-              <Route component={({ match }) => {
-                console.log(match)
-                // 重定向
-                // if (route.path === '/about') return <Redirect to="/login" />
-                document.title = route.title
-                return <route.component />
-              }}
-              exact={!!route.exact}
-              key={index}
-              path={route.path} />
-            ))}
-          </Switch>
+          <Suspense fallback={<Loading />}>{renderRoutes(routes)}</Suspense>
         </Router>
       </>
     )
   }
 }
 
-export default App
+export default connect(mapStateToProps)(App)
